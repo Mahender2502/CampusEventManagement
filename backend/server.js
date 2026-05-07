@@ -8,7 +8,11 @@ const PORT = process.env.PORT || 5000
 
 async function start() {
   await connectDB(process.env.MONGODB_URI)
+
   const app = createApp()
+
+  // ADD THIS LINE
+  app.set('trust proxy', 1)
 
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
