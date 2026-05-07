@@ -20,12 +20,7 @@ import { swaggerSpec } from './config/swagger.js'
 export default function createApp() {
   const app = express()
 
-  app.use(
-    cors({
-      origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
-      credentials: true,
-    }),
-  )
+  app.use(cors())
 
   app.use(express.json())
 
